@@ -22,3 +22,5 @@ def main():
     print("Small subarr length: " +str(smallest_subarray_with_given_sum_array(7,[2,1,5,8,2])))
 
 main()
+
+### time: O(N + N) outer loop loops N times, while the inner loop loops each element of the array once no matter what, therefore it's PLUS N NOT N2.
