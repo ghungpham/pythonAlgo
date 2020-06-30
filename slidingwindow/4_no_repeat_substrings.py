@@ -5,15 +5,16 @@ def no_repeating_substrings(str):
     used = {}
 
     for i, char in enumerate(str):
-        """check if the char is already in the hashmap, if it's in the map and that if the start index is behind
-        the used dictionary, then we move the start index to the right one index from the used character --> giving 
-        the substring non-repeating
-        If the start index is higher than the used character index, we need to discount the old one and update with
-        the new index
-        """
+        # check if the char is already in the hashmap, if it's in the map and that if the start index is behind
+        # the used dictionary, then we move the start index to the right one index from the used character --> giving 
+        # the substring non-repeating
+        # If the start index is higher than the used character index, we need to discount the old one and update with
+        # the new index
+
         if char in used and start <= used[char]:
             start = used[char] + 1
-        #set chars in the used index
+
+        #set chars in the used index, if char in used but start is higher than used, replace it with new one
         used[char] = i
         #find max_len for every end-window index
         max_len = max(max_len, i - start + 1)
