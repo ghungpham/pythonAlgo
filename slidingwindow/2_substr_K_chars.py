@@ -28,3 +28,4 @@ def main():
 
 main()
 
+##problem combining hashmap w sliding window
